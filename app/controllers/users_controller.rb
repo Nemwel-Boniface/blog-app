@@ -4,11 +4,5 @@ class UsersController < ApplicationController
 
   def show
     
-  end
-
-  def method_name
-    
-  end
-  
-  
+  end 
 end
