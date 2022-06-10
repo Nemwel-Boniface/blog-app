@@ -1,23 +1,23 @@
 require 'rails_helper'
 
-# describe "Posts", type: :request do
+describe "Posts", type: :request do
 
-#   before(:each) { get posts_path } 
+  before(:each) { get user_posts_path(user_id: 1) } 
 
-#   context "index" do
-#     it "GET /index returns okay status" do
-#       expect(response).to have_http_status(200)  
-#     end
+  context "index" do
+    it "GET /index returns okay status" do
+      expect(response).to have_http_status(200)  
+    end
 
-#     it 'GET /index renders correct template(index)' do
-#       expect(response).to render_template(:index)
-#     end
+    it 'GET /index renders correct template(index)' do
+      expect(response).to render_template(:index)
+    end
 
-#     it 'GET /index include correct placeholder text' do
-#       expect(response.body).to include('See Blog posts')
-#     end
-#   end
-# end
+    it 'GET /index include correct placeholder text' do
+      expect(response.body).to include('See Blog posts')
+    end
+  end
+end
 
 # describe "Posts", type: :request do
 
