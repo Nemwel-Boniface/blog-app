@@ -21,7 +21,8 @@ end
 
 describe "Posts", type: :request do
 
-  before(:each) { get post_path({id: 1}) } 
+  before(:each) { get user_post_path({user_id: 1, id: 2}) } 
+
   context "show" do
     it 'GET /show status' do
     expect(response).to have_http_status(200)
