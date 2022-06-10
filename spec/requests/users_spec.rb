@@ -27,9 +27,9 @@ describe 'User', type: :request do
     expect(response).to have_http_status(200)
   end
 
-  # it 'GET /show render correct template(show)' do
-  #   expect(response).to render_template(:show)
-  # end
+  it 'GET /show render correct template(show)' do
+    expect(response).to render_template(:show)
+  end
 
   it 'GET /show include correct placeholder text' do
     expect(response.body).to include('See user profile')
