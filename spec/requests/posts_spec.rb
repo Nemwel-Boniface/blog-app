@@ -19,22 +19,22 @@ describe "Posts", type: :request do
   end
 end
 
-# describe "Posts", type: :request do
+describe "Posts", type: :request do
 
-#   before(:each) { get post_path({id: 1}) } 
-#   context "show" do
-#     it 'GET /show status' do
-#     expect(response).to have_http_status(200)
-#   end
+  before(:each) { get post_path({id: 1}) } 
+  context "show" do
+    it 'GET /show status' do
+    expect(response).to have_http_status(200)
+  end
 
-#   it 'GET /show render correct template(show)' do
-#     expect(response).to render_template(:show)
-#   end
+  it 'GET /show render correct template(show)' do
+    expect(response).to render_template(:show)
+  end
 
-#   it 'GET /show include correct placeholder text' do
-#     expect(response.body).to include('Here is a list of posts for a given user')
-#   end
-#   end
-# end
+  it 'GET /show include correct placeholder text' do
+    expect(response.body).to include('Here is a list of posts for a given user')
+  end
+  end
+end
 
 
