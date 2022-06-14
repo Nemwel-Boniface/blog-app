@@ -1,1 +1,14 @@
-<p>Here is a list of posts for a given user<p>
+
+
+<div>
+  <%= render partial: "post_details" , locals: { post: @post } %>
+</div>
+<div class="posts">
+  <ul>
+    <% @user_most_recent_three_posts.comments.each do |comment| %>
+      <li>
+        <%= render partial: "shared/comment" , locals: { comment: comment } %>
+      </li>
+      <% end %>
+  </ul>
+</div> 
