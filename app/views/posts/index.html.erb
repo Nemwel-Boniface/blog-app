@@ -1,4 +1,4 @@
- <%= render partial: "users/user" , locals: { user: @user } %>
+ <%= render "users/user", user: @user%>
  
 <div class="container">
   <% @posts.each_with_index do |post, index| %>
@@ -6,10 +6,11 @@
       <ul>
         <% post.comments.each do |comment| %>
           <li>
-            <%= render partial: "shared/comment" , locals: { comment: comment } %>
+            <%= render "comment/comment", comment: comment %>
           </li>
           <% end %>
       </ul>
       <% end %>
 </div>
+
 
