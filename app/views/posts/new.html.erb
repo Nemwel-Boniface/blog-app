@@ -1,0 +1,25 @@
+<%= form_with model: @post do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </div>
+
+  <div>
+    <%= form.label :comments_counter %><br>
+    <%= form.button :comments_counter %>
+  </div>
+
+  <div>
+    <%= form.label :posts_counter %><br>
+    <%= form.button :posts_counter %>
+  </div>
+  
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
