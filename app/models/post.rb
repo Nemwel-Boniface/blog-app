@@ -4,7 +4,9 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   after_save :update_posts_counter
 
-  def update_posts_counter
+
+
+  def update_posts_counte
     user.update(posts_counter: user.posts.size)
   end
 
