@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :text, presence: true
 
-  def update_posts_counte
+  def update_posts_counter
     user.update(posts_counter: user.posts.size)
   end
 

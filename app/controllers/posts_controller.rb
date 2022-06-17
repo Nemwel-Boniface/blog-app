@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.comments_counter = 0
     @post.likes_counter = 0
-
+    
     if @post.save
       flash[:success] = 'Post saved successfully'
       redirect_to user_post_url(@user, @post)
@@ -27,10 +27,10 @@ class PostsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
+  
   private
-
+  
   def post_params
-    params.permit(:title, :text)
+    params.require(:post).permit(:title, :text)
   end
 end
