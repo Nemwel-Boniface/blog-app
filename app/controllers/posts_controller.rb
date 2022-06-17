@@ -14,20 +14,23 @@ class PostsController < ApplicationController
   end
 
   def create
+    @user = User.find(params[:user_id])
     @post = Post.new(post_params)
     @post.comments_counter = 0
     @post.likes_counter = 0
 
     if @post.save
       flash[:success] = 'Post saved successfully'
-      redirect_to user_post_path
+      redirect_to user_post_url(@user, @post)
     else
       flash.now[:error] = 'Error: Post could not be saved'
       render :new, status: :unprocessable_entity
     end
   end
 
+  private
+
   def post_params
-    params.require(:post).permit(:title, :text)
+    params.permit(:title, :text)
   end
 end
