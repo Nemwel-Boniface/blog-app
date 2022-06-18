@@ -13,13 +13,13 @@ describe 'Users', type: :request do
     end
 
     it 'GET /index include correct placeholder text' do
-      expect(response.body).to include('Welcome to Blog App')
+      expect(response.body).to include('Blog App Users')
     end
   end
 end
 
 describe 'User', type: :request do
-  before(:each) { get user_path({ id: 1 }) }
+  before(:each) { get user_path(id: 2) }
 
   context 'show' do
     it 'GET /show status' do

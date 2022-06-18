@@ -1,0 +1,17 @@
+current directory: C:/Users/USER/Desktop/Microverse/Backend/blog-app/vendor/bundle/ruby/3.1.0/gems/strscan-3.0.3/ext/strscan
+C:/Ruby31-x64/bin/ruby.exe -I C:/Ruby31-x64/lib/ruby/site_ruby/3.1.0 -r ./siteconf20220618-4784-346pkw.rb extconf.rb
+checking for onig_region_memsize() in ruby.h... yes
+creating Makefile
+
+current directory: C:/Users/USER/Desktop/Microverse/Backend/blog-app/vendor/bundle/ruby/3.1.0/gems/strscan-3.0.3/ext/strscan
+make DESTDIR\= clean
+
+current directory: C:/Users/USER/Desktop/Microverse/Backend/blog-app/vendor/bundle/ruby/3.1.0/gems/strscan-3.0.3/ext/strscan
+make DESTDIR\=
+generating strscan-x64-mingw-ucrt.def
+compiling strscan.c
+linking shared-object strscan.so
+
+current directory: C:/Users/USER/Desktop/Microverse/Backend/blog-app/vendor/bundle/ruby/3.1.0/gems/strscan-3.0.3/ext/strscan
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 strscan.so ./.gem.20220618-4784-1qlqm1
