@@ -2,7 +2,7 @@
   <div class="post-header">
     <h2>Post by <%= post.user.name %></h2>
     <small>
-      <span>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
+      <span>Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %></span>
     </small>
   </div>
   <p>
@@ -17,5 +17,5 @@
     </div>
   <% end %>
   <h3>Add new comment:</h3>
-  <%= render partial: "comments/form", locals: { comment: Comment.new, user_id: @post.user_id, post: @post } %>
+  <%= render partial: "comments/form", locals: { comment: Comment.create(params.permit(:text)), user_id: @post.user_id, post: @post } %>
 </div>
