@@ -46,6 +46,8 @@ gem 'tzinfo-data', '1.2014.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
+gem 'omniauth'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
