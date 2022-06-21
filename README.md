@@ -35,12 +35,18 @@ To install rails, run `gem install rails on your terminal`
 ### Run tests
 To run tests enter `rspec` command on your terminal
 
-## Author
+## Authors
 
 👤 **Okoroji Victor aka Vickymarz**
 
 - GitHub: [@githubhandle](https://github.com/vickymarz)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/okoroji-victor-ebube-8791741a0)
+
+👤 **Usor Faith Eloho**
+
+- GitHub: [@githubhandle](https://github.com/usorfaitheloho)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/faith-usor/)
+
 
 
 ## 🤝 Contributing
