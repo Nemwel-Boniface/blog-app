@@ -18,6 +18,11 @@
     <div class="comment-card">
       <%= render "comments/comment", comment: comment %>
     </div>
+    
+    <% if can? :destroy, post %>
+    <%= button_to "Delete", user_post_path, method: :delete %>
+   <%end%>
+
   <% end %>
   <h3>Add new comment:</h3>
   <%= render partial: "comments/form", locals: { comment: Comment.create(params.permit(:text)), user_id: @post.user_id, post: @post } %>
