@@ -8,8 +8,10 @@
   <p>
     <%= post.text %>
   </p>
-  <% if can? :manage, post %>
+  <% if can? :delete, post %>
+   <button>
     <%= link_to "Delete", post, method: :delete %>
+    <button>
   <% end %>
   <%= render partial: "likes/form", locals: { like: Like.new, user: post.user, post: post } %>
 </div>
