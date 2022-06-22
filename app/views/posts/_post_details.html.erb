@@ -8,11 +8,9 @@
   <p>
     <%= post.text %>
   </p>
-  <% if can? :delete, post %>
-    <button>
-      <%= link_to "Delete", post, method: :delete %>
-    <button>
-  <% end %>
+   <% if can? :destroy, post %>
+    <%= button_to "Delete", user_post_path, method: :delete %>
+   <%end%> 
   <%= render partial: "likes/form", locals: { like: Like.new, user: post.user, post: post } %>
 </div>
 <div class="comments-wrapper">

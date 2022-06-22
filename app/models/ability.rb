@@ -6,7 +6,7 @@ class Ability
 
     return unless user.present?
     can :destroy, [Post, Comment]
-    
+
     if user.is? :admin
       can :destroy, [Post, Comment]
     else
