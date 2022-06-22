@@ -1,4 +1,4 @@
-<h3>Post #<%= index + 1 %></h3>
+<h3><%= link_to "Post #{index + 1}", user_post_path(@user, post) %></h3>
 <p><strong>Post Title: </strong><%= post.title %></p>
 <p><strong>Post Content: </strong><br><%= post.text %></p>
-<p><span>Comments: <%= post.comments_counter || 0 %></span><span>    Likes: <%= post.likes_counter || 0 %></span></p>
+<p><span>Comments: <%= post.comments_counter || 0 %></span><span>  Likes: <%= post.likes_counter || 0 %></span></p>
