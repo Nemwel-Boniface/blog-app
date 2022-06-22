@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:alert] = 'New comment saved successfully'
-      redirect_to user_posts_path(@user)
+      redirect_to user_posts_path
     else
       flash[:notice] = 'Error: Comment could not be saved'
       render :new, status: :unprocessable_entity
