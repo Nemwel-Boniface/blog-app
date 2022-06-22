@@ -5,12 +5,13 @@ class Ability
     user ||= User.new
 
     return unless user.present?
+
     can :destroy, [Post, Comment]
 
     if user.is? :admin
       can :destroy, [Post, Comment]
     else
-      can :read,[Post, Comment]
+      can :read, [Post, Comment]
     end
   end
 end
