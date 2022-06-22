@@ -5,11 +5,8 @@ class Ability
     user ||= User.new
 
     return unless user.present?
-
-    can :manage, Post, user: user
-
+    can :destroy, [Post, Comment]
     return unless user.admin?
-
-    can :manage, Post, user_id == user.id
+    can :destroy, [Post, Comment]
   end
 end
