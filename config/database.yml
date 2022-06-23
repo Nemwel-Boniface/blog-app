@@ -58,7 +58,7 @@ development:
 test:
   <<: *default
   database: blog_app_test
-  password: Anambrastate@1
+  password: jehovah1995
   host: localhost
   username: postgres
   port: 5432
