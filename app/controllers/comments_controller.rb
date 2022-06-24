@@ -9,9 +9,11 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params(post))
 
     if @comment.save
+      render json: @comment, status: ok
       flash[:alert] = 'New comment saved successfully'
       redirect_to user_posts_path
     else
+      render json: {errors: @comment.errors.full_messages}, status: :unprocessable_entity
       flash[:notice] = 'Error: Comment could not be saved'
       render :new, status: :unprocessable_entity
     end
