@@ -22,7 +22,7 @@ class PostsController < ApplicationController
       flash[:success] = 'Post saved successfully'
       redirect_to user_posts_path
     else
-      render json: {errors: @post.errors.full_messages}, status: :unprocessable_entity
+      render json: { errors: @post.errors.full_messages }, status: :unprocessable_entity
       flash.now[:error] = 'Error: Post could not be saved'
       render :new, status: :unprocessable_entity
     end
