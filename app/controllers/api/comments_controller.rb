@@ -1,4 +1,4 @@
-class Api::V1::CommentsController < ApplicationController
+class Api::CommentsController < ApplicationController
   load_and_authorize_resource
 
   def index
@@ -9,14 +9,14 @@ class Api::V1::CommentsController < ApplicationController
 
   private
 
-  def comment_parameters
+  def comment_params
     params.require(:comment).permit(:text)
   end
 end
 
 def create
   @post = Post.find(params[:post_id])
-  @comment = @post.comments.new(text: comment_parameters[:text], author_id: current_user.id, post_id: @post.id)
+  @comment = @post.comments.new(text: comment_params[:text], user_id: current_user.id, post_id: @post.id)
   if @comment.save
     render json: @comment
   else
