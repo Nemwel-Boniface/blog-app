@@ -3,6 +3,8 @@ class PostsController < ApplicationController
     user_id = params[:user_id]
     @user = User.find(user_id)
     @posts = @user.posts.includes(:user, :comments)
+
+    render json: @posts, status: ok
   end
 
   def new
@@ -16,9 +18,11 @@ class PostsController < ApplicationController
     @post.likes_counter = 0
 
     if @post.save
+      render json: @post, status: :created
       flash[:success] = 'Post saved successfully'
       redirect_to user_posts_path
     else
+      render json: { errors: @post.errors.full_messages }, status: :unprocessable_entity
       flash.now[:error] = 'Error: Post could not be saved'
       render :new, status: :unprocessable_entity
     end
@@ -28,6 +32,9 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = Post.includes(:user, :comments).find(params[:id])
     @comment = @post.recent_comments
+
+    render json: @post, status: ok
+    render json: @comment, status: ok
   end
 
   def destroy
