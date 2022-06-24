@@ -2,9 +2,9 @@ class User < ApplicationRecord
   # before_action :authenticate_user!
   # Include default devise modules. Others available are:
   #  :lockable, :timeoutable, :trackable and :omniauthable
-  include Devise::JWT::RevocationStrategies::JTIMatcher
   devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :jwt_authenticatable, jwt_revocation_strategy: JwtBlacklist
+
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :posts, dependent: :destroy
